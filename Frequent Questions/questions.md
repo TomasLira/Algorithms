@@ -50,3 +50,39 @@
 
 17. **Encontrar o k-ésimo maior elemento**  
     Dada uma lista `A` contendo `n` inteiros, projete um algoritmo que retorne o k-ésimo maior elemento da lista. O algoritmo deve ter complexidade O(n) no pior caso.
+
+18. **Ordenação por Heap**
+
+Dada uma lista A contendo n inteiros, projete um algoritmo que ordene a lista utilizando o algoritmo de ordenação por heap (heap sort). O algoritmo deve ter complexidade O(n log n) no pior caso.
+
+19. **Busca Binária em HashTable**
+
+Dada uma HashTable contendo n inteiros, projete um algoritmo que realize uma busca binária em todos os elementos da HashTable para encontrar um valor específico. O algoritmo deve ter complexidade O(n log n) no pior caso.
+
+20. **Seleção do k-ésimo menor elemento**
+
+Dada uma lista A contendo n inteiros e um valor k, projete um algoritmo para encontrar o k-ésimo menor elemento na lista usando o algoritmo de seleção (por exemplo, o algoritmo de seleção de Quickselect). O algoritmo deve ter complexidade O(n) no pior caso.
+
+21. **Algoritmo Gulosos para Atividades**
+
+Dada uma lista de atividades, onde cada atividade é representada por um par de inteiros (start, end) indicando o tempo de início e o tempo de término da atividade, projete um algoritmo guloso que selecione o máximo número de atividades que podem ser realizadas sem sobreposição de horários. O algoritmo deve ter complexidade O(n log n) no pior caso.
+
+22. **Busca Linear**
+
+Dada uma lista A contendo n inteiros e um valor x, projete um algoritmo que encontre o índice de x na lista utilizando busca linear. O algoritmo deve ter complexidade O(n) no pior caso.
+
+23. **Ordenação por Contagem**
+
+Dada uma lista A de n inteiros que variam de 0 a k, projete um algoritmo que ordene a lista usando o algoritmo de ordenação por contagem (counting sort). O algoritmo deve ter complexidade O(n + k) no pior caso.
+
+24. **Hashing com Encadeamento**
+
+Dada uma HashTable com encadeamento para lidar com colisões, projete um algoritmo que insira e busque elementos na HashTable. O algoritmo de busca deve ter complexidade O(1) no caso médio.
+
+25. **Ordenação por Inserção**
+
+Dada uma lista A contendo n inteiros, projete um algoritmo que ordene a lista utilizando o algoritmo de ordenação por inserção (insertion sort). O algoritmo deve ter complexidade O(n^2) no pior caso.
+
+26. **Ordenação por Shell**
+
+Dada uma lista A contendo n inteiros, projete um algoritmo que ordene a lista utilizando o algoritmo de ordenação por Shell (shell sort). O algoritmo deve ter complexidade O(n^(3/2)) no pior caso.

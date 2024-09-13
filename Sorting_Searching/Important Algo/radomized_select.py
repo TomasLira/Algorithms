@@ -12,6 +12,7 @@ def partition(array, start, end):
     for current_index in range(start, end):
         if array[current_index] <= pivot:
             smaller_index += 1
+            # smaller idx always points to an element bigger than pivot and swaps with a smaller one.
             array[smaller_index], array[current_index] = array[current_index], array[smaller_index]
     array[smaller_index + 1], array[end] = array[end], array[smaller_index + 1]
     return smaller_index + 1
