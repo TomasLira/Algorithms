@@ -1,7 +1,5 @@
 # Classic Algorithm Problems
 
-# Algorithm Problems with Specific Time Complexities
-
 1. **Top K Frequent Elements**
    - **Description**: Given an integer `k` and a list `A` of integers containing `n` elements with `m` distinct numbers (where `m ≥ k`), design an algorithm to return the `k` most frequent integers in the list. The algorithm should have O(n) time complexity in the worst case.
    - **Time Complexity**: O(n)
@@ -103,3 +101,49 @@
 25. **Maximum Profit from Stock Prices**
     - **Description**: Given an array `A` of `n` integers where each element represents the stock price on a given day, design an algorithm to find the maximum profit you can achieve by buying and selling once. The algorithm should have O(n) time complexity.
     - **Time Complexity**: O(n)
+
+
+26. **Minimum Platforms Required**
+   - **Description**: Given two lists `arrival` and `departure`, representing the arrival and departure times of trains, design an algorithm to find the minimum number of platforms required at the station so that no train waits. The algorithm should use a greedy approach combined with sorting and searching.
+   - **Time Complexity**: O(n log n)
+
+27. **Largest Rectangle in Histogram**
+   - **Description**: Given a list `A` of `n` non-negative integers representing the heights of a histogram, design an algorithm to find the largest rectangle that can be formed within the histogram. Use a stack-based greedy approach combined with searching.
+   - **Time Complexity**: O(n)
+
+
+
+28. **Smallest Range Covering Elements from K Lists**
+   - **Description**: Given `k` sorted lists, design an algorithm to find the smallest range that includes at least one element from each list. Use a combination of sorting, selection, and a greedy approach to efficiently find the smallest range.
+   - **Time Complexity**: O(n log k), where `n` is the total number of elements across all lists.
+
+
+29. **Divide Array into K Subarrays with Minimum Largest Sum**
+   - **Description**: Given a list `A` of `n` integers and an integer `k`, design an algorithm to divide the array into `k` contiguous subarrays such that the maximum sum of any subarray is minimized. Use a combination of binary search and greedy strategies.
+   - **Time Complexity**: O(n log S), where `S` is the sum of all elements in `A`.
+
+
+
+30. **Find All Triplets with Zero Sum**
+   - **Description**: Given a list `A` of `n` integers, design an algorithm to find all unique triplets `(i, j, k)` such that `A[i] + A[j] + A[k] = 0`. Use sorting and hashing to achieve this.
+   - **Time Complexity**: O(n^2)
+
+31. **K-th Largest Element in a Stream**
+   - **Description**: Given a stream of integers and an integer `k`, design an algorithm to find the `k`-th largest element in the stream at any point in time. Use a combination of a min-heap (priority queue) and selection.
+   - **Time Complexity**: O(n log k)
+
+32. **Maximize Sum After K Negations**
+   - **Description**: Given a list `A` of `n` integers, design an algorithm to maximize the sum of the array after performing at most `k` negations (negate any element by multiplying it by `-1`). Use a greedy strategy combined with sorting.
+   - **Time Complexity**: O(n log n)
+
+33. **Merge Intervals with Maximum Overlap**
+   - **Description**: Given a list of intervals, design an algorithm to merge all overlapping intervals while maximizing the total overlap. Use sorting combined with greedy strategies to efficiently find and merge the intervals.
+   - **Time Complexity**: O(n log n)
+
+34. **Shortest Unsorted Subarray**
+   - **Description**: Given a list `A` of `n` integers, design an algorithm to find the shortest continuous subarray such that sorting this subarray would make the entire list sorted. Use sorting and binary search to identify the subarray.
+   - **Time Complexity**: O(n log n)
+
+35. **Find the Median in a Data Stream**
+   - **Description**: Given a stream of integers, design an algorithm to continuously return the median of the elements processed so far. Use a combination of two heaps (max-heap and min-heap) to maintain the median in O(log n) time for each insertion.
+   - **Time Complexity**: O(n log n)
