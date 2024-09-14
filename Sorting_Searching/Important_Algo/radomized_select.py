@@ -33,7 +33,7 @@ def randomized_select(array, start, end, target_order):
         return randomized_select(array, pivot_index + 1, end, target_order - relative_order)
 
 
-array = [3, 2, 9, 4, 8, 1, 6, 7, 5]
-target_order = 5 
-result = randomized_select(array, 0, len(array) - 1, target_order)
+array = [1,2,2,3,4,5,5,6,7]
+target_order = len(array)//2 
+result = randomized_select(array, 0, len(array) - 1,target_order)
 print(f"The {target_order}th smallest element is: {result}")
