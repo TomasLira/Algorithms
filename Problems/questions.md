@@ -147,3 +147,77 @@
 35. **Find the Median in a Data Stream**
    - **Description**: Given a stream of integers, design an algorithm to continuously return the median of the elements processed so far. Use a combination of two heaps (max-heap and min-heap) to maintain the median in O(log n) time for each insertion.
    - **Time Complexity**: O(n log n)
+
+36. **Fibonacci Number**
+   - **Description**: Given an integer `n`, design an algorithm to return the `n`th Fibonacci number. The algorithm should have O(n) time complexity.
+   - **Time Complexity**: O(n)
+
+
+37. **Climbing Stairs**
+   - **Description**: Given an integer `n`, representing the number of steps, design an algorithm to determine how many distinct ways you can climb to the top. You can climb either 1 step or 2 steps at a time. The algorithm should have O(n) time complexity.
+   - **Time Complexity**: O(n)
+
+
+38. **House Robber**
+   - **Description**: Given an array `A` of `n` non-negative integers representing the amount of money in each house, design an algorithm to determine the maximum amount of money you can rob without alerting the police (you cannot rob two adjacent houses). The algorithm should have O(n) time complexity.
+   - **Time Complexity**: O(n)
+
+
+39. **Min Cost Climbing Stairs**
+   - **Description**: Given an array `A` of `n` integers where `A[i]` is the cost of stepping on the `i`th step, design an algorithm to determine the minimum cost to reach the top of the staircase. You can either start from the 0th or 1st step. The algorithm should have O(n) time complexity.
+   - **Time Complexity**: O(n)
+
+
+40. **Coin Change**
+   - **Description**: Given an array `A` representing available coin denominations and an integer `x`, design an algorithm to determine the minimum number of coins needed to make up the amount `x`. The algorithm should have O(x * n) time complexity.
+   - **Time Complexity**: O(x * n)
+
+
+41. **Longest Common Subsequence**
+   - **Description**: Given two strings `A` and `B`, design an algorithm to find the length of their longest common subsequence. The algorithm should have O(n * m) time complexity, where `n` and `m` are the lengths of `A` and `B`, respectively.
+   - **Time Complexity**: O(n * m)
+
+
+42. **Partition Equal Subset Sum**
+   - **Description**: Given an array `A` of `n` integers, design an algorithm to determine whether you can partition the array into two subsets such that the sum of both subsets is equal. The algorithm should have O(n * S) time complexity, where `S` is half the total sum of `A`.
+   - **Time Complexity**: O(n * S)
+
+
+43. **Edit Distance**
+   - **Description**: Given two strings `A` and `B`, design an algorithm to find the minimum number of operations (insertions, deletions, or substitutions) required to convert `A` into `B`. The algorithm should have O(n * m) time complexity, where `n` and `m` are the lengths of `A` and `B`, respectively.
+   - **Time Complexity**: O(n * m)
+
+
+44. **Maximum Subarray Sum**
+   - **Description**: Given an array `A` of `n` integers, design an algorithm to find the contiguous subarray with the maximum sum. The algorithm should have O(n) time complexity.
+   - **Time Complexity**: O(n)
+
+
+45. **Unique Paths**
+    - **Description**: Given two integers `m` and `n`, representing a grid of size `m x n`, design an algorithm to find how many unique paths exist from the top-left corner to the bottom-right corner, moving only right or down. The algorithm should have O(m * n) time complexity.
+    - **Time Complexity**: O(m * n)
+
+
+46. **Triangle Minimum Path Sum**
+    - **Description**: Given a triangle of integers, where each row contains one more element than the previous row, design an algorithm to find the minimum path sum from the top to the bottom. You can only move to adjacent numbers in the next row. The algorithm should have O(n^2) time complexity.
+    - **Time Complexity**: O(n^2)
+
+
+47. **Word Break**
+   - **Description**: Given a string `S` and a dictionary `D` of words, design an algorithm to determine if `S` can be segmented into a space-separated sequence of one or more dictionary words. The algorithm should have O(n^2) time complexity, where `n` is the length of the string.
+   - **Time Complexity**: O(n^2)
+
+
+48. **Palindromic Substrings**
+   - **Description**: Given a string `S`, design an algorithm to find how many palindromic substrings are present in `S`. The algorithm should have O(n^2) time complexity.
+   - **Time Complexity**: O(n^2)
+
+
+49. **Longest Palindromic Subsequence**
+   - **Description**: Given a string `S`, design an algorithm to find the length of the longest palindromic subsequence in `S`. The algorithm should have O(n^2) time complexity.
+   - **Time Complexity**: O(n^2)
+
+
+50. **Decode Ways**
+   - **Description**: Given a string `S` containing only digits, design an algorithm to determine how many ways the string can be decoded, assuming `1` maps to `A`, `2` maps to `B`, and so on up to `26`. The algorithm should have O(n) time complexity.
+   - **Time Complexity**: O(n)
