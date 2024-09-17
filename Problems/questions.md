@@ -44,7 +44,7 @@
 
 11. **Median of Two Sorted Arrays**
    - **Description**: Given two sorted arrays `A` and `B` of sizes `m` and `n`, respectively, design an algorithm to find the median of the combined sorted array. The algorithm should have O(log(min(m, n))) time complexity.
-   - **Time Complexity**: O(log(min(m, n)))
+   - **Time Complexity**: O(log(m+n))
 
 12. **Longest Substring with At Most K Distinct Characters**
    - **Description**: Given a string `S` and an integer `k`, design an algorithm to find the length of the longest substring with at most `k` distinct characters. The algorithm should have O(n) time complexity.
