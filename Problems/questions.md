@@ -142,3 +142,43 @@
 34. **Shortest Unsorted Subarray**
    - **Description**: Given a list `A` of `n` integers, design an algorithm to find the shortest continuous subarray such that sorting this subarray would make the entire list sorted. Use sorting and binary search to identify the subarray.
    - **Time Complexity**: O(n log n)
+
+35. **Minimum Number of Platforms**
+   - **Description**: You are given two arrays `arrivals` and `departures`, each of size `n`, where `arrivals[i]` and `departures[i]` represent the arrival and departure times of trains. Design an algorithm to find the minimum number of platforms required to accommodate the trains so that no two trains are on the same platform at the same time.
+   - **Time Complexity**: O(n log n)
+
+36. **Largest Number from Digits**
+   - **Description**: Given a list `A` of `n` integers, design an algorithm to arrange the numbers to form the largest possible number. Use a greedy strategy to compare concatenated number strings to decide the order.
+   - **Time Complexity**: O(n log n)
+
+37. **Minimum Number of Coins**
+   - **Description**: Given a list of coin denominations and an integer `amount`, design an algorithm to find the minimum number of coins needed to make the exact amount. Assume there are unlimited coins for each denomination. Use a greedy strategy to pick the largest coin denomination first.
+   - **Time Complexity**: O(n log n)
+
+38. **Partition Labels**
+   - **Description**: Given a string `S`, partition the string into as many parts as possible so that each letter appears in at most one part. Return the sizes of these parts. Use a greedy approach to extend partitions while keeping track of the last occurrence of each character.
+   - **Time Complexity**: O(n)
+
+39. **Jump Game**
+   - **Description**: Given an array of non-negative integers `A` where `A[i]` represents the maximum number of steps you can jump forward from index `i`, design a greedy algorithm to determine if you can reach the last index starting from the first.
+   - **Time Complexity**: O(n)
+
+40. **Gas Station**
+   - **Description**: You are given two arrays `gas` and `cost`, where `gas[i]` represents the amount of gas available at station `i` and `cost[i]` represents the cost of gas to travel to the next station. Design an algorithm to find the starting station from which you can travel around the circuit once if possible.
+   - **Time Complexity**: O(n)
+
+41. **Candy Distribution**
+   - **Description**: There are `n` children standing in a line, and each child is assigned a rating value. You are required to give each child at least one candy, but children with a higher rating should receive more candies than their neighbors. Design a greedy algorithm to determine the minimum number of candies needed.
+   - **Time Complexity**: O(n)
+
+42. **Minimize Deviation in Array**
+   - **Description**: Given an array `A` of `n` integers, where you can either double the value of any even integer or halve any odd integer, design a greedy algorithm to minimize the maximum difference between the largest and smallest elements.
+   - **Time Complexity**: O(n log n)
+
+43. **Maximum Product of Three Numbers**
+   - **Description**: Given a list `A` of `n` integers, design an algorithm to find the maximum product of any three numbers. Use a greedy strategy to determine the highest combination, considering both positive and negative values.
+   - **Time Complexity**: O(n log n)
+
+44. **Maximum Number of Events Attended**
+   - **Description**: You are given a list of `events`, where each event is represented as a pair `[start, end]`. Design an algorithm to find the maximum number of events you can attend, assuming you can only attend one event per day. Use a greedy strategy to attend events starting the earliest and adjust accordingly.
+   - **Time Complexity**: O(n log n)
