@@ -1,14 +1,12 @@
 # Solution 1 O(n) Time
 def pair_sum(nums,target):
-    hash_table = {}
-    for num in nums:
-        hash_table[num] = target - num  
-    for num in nums:
-        # See if num is another nums complement
-        complement = hash_table[num]
-        if complement is not None and complement != num:
-            return [num,complement]
-    return None     
+    hashmap = {}
+    for idx,num in enumerate(nums):
+        hashmap[target - num] = idx
+    for idx,num in enumerate(nums):
+        if num in hashmap and idx != hashmap[num]:
+            return [idx,hashmap[num]]
+    return []  
 
 # Solution 2 O(n) Time
 def pair_sum(nums,target):

@@ -1,7 +1,7 @@
 # Solution 1 O(nm) Time
 from collections import defaultdict
 def unique_lists(nums_l: list[list[int]]):
-    
+    # Default value if element not found
     hash_table = defaultdict(lambda: (0, -1))
     
     # Only register the frequency if in diff lists
