@@ -6,6 +6,8 @@ def find_pair_optimized(nums):
     indices = (-1,-1)
     max_eq = -maxsize
     while left < right:
+        # tradeoff of starting as max indices having possibly small nums[idx]
+        # iteration will shrink |i,j| and make min() bigger!
         eq = abs(left - right)*min(nums[left],nums[right])
         if eq >= max_eq:
             indices  = (left,right)
