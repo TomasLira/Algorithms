@@ -10,4 +10,3 @@ def majority_element(nums):
         else:
             count += 1
     return count_num
-

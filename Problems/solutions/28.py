@@ -23,12 +23,12 @@ def smallest_range(nums_list):
         print(min_val,max_val)
     return [range_start,range_end]
             
-nums = [
+# nums = [
     
-    [4, 10, 15, 24, 26],
-    [0, 9, 12, 20],
-    [5, 18, 22, 30]
-]
+#     [4, 10, 15, 24, 26],
+#     [0, 9, 12, 20],
+#     [5, 18, 22, 30]
+# ]
 
-resultado = smallest_range(nums)
-print(f"Menor intervalo: {resultado}")
+# resultado = smallest_range(nums)
+# print(f"Menor intervalo: {resultado}")

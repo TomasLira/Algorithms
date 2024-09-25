@@ -11,9 +11,4 @@ def closest_pair(l1, l2):
             idx2 += 1
         else: 
             return 0
-    return min_diff
-
-print(closest_pair([1, 4, 9, 13], [5, 8, 10]))
-
-# Solution 2 O(n) Time
-    
+    return min_diff    

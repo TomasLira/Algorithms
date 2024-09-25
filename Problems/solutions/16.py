@@ -32,7 +32,6 @@ def smallest_subarray(nums,target):
 print(smallest_subarray([2,3,1,2,4,3],7))
 
 
-
 # This question is a variation when equals to target
 def smallest_subarray(nums,target):
     # Sliding window has undefined size
@@ -47,11 +46,4 @@ def smallest_subarray(nums,target):
             size -= 1            
         if current_sum == target:
             smallest_size = min(smallest_size,size)
-    return smallest_size if smallest_size != len(nums) else 0    
-
-
-# print(smallest_subarray([1,2,3,4,5],11))
-            
-            
-            
-        
+    return smallest_size if smallest_size != len(nums) else 0                  

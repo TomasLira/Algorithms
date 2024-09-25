@@ -16,10 +16,3 @@ def missing_pos(nums):
         if i not in pos_set:
             return i
     return max(nums) + 1
-    
-print(missing_pos([-1,-2,-3,1,12]))    
-    
-
-    
-    
-    

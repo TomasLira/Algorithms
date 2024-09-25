@@ -15,8 +15,6 @@ def closest_elements(nums, target, k):
 
 print(closest_elements([1, 2, 36, 4, 6], 5, 3))
 
-
-
 # Time complexity O(k log n)
 def closest_elements(nums,target,k):
     heap = []
@@ -27,9 +25,3 @@ def closest_elements(nums,target,k):
     for i in range(k):
         result.append(heapq.heappop(heap)[1])
     return result
-    
-print(closest_elements([1,2,36,4,6],5,3))
-        
-
-    
-    

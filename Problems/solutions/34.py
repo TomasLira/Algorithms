@@ -21,5 +21,3 @@ def findUnsortedSubarray(nums):
             end = right 
             break
     return end - start + 1
-
-print(findUnsortedSubarray([2,6,4,1,10,9,15])) 

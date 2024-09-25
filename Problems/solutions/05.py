@@ -53,8 +53,7 @@ def get_smallest(nums):
         smallest_sum = min(abs(nums[idx]-nums[idx-1]),smallest_sum)
     return smallest_sum
         
-        
-
+    
 root = BST(10)
 root.insert_node(15)
 root.insert_node(13)

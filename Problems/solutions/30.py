@@ -19,6 +19,3 @@ def three_sum(nums,target):
                 while nums[start] == nums[start-1] and start < end:
                     start += 1
     return result
-                    
-
-print(three_sum([1,2,3,4,5,6,7],10))

@@ -26,5 +26,3 @@ def count_inversions(nums: List[int]):
 
     sorted_list = merge(left, right)
     return sorted_list, counter
-
-print(count_inversions([1, 2, 3, 4, 5]))
