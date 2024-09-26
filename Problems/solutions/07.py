@@ -10,6 +10,3 @@ def k_closest(nums,x):
             current_diff = nums[right] - nums[left]
         max_size = max(max_size,right - left +1)
     return max_size    
-        
-        
-        
