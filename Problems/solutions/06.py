@@ -11,7 +11,7 @@ def closest_elements(nums, target, k):
             heapq.heappop(heap)
         
     result = [-heapq.heappop(heap)[1] for _ in range(k)]    
-    return sorted(result)
+    return result
 
 print(closest_elements([1, 2, 36, 4, 6], 5, 3))
 
