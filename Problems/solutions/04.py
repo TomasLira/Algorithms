@@ -16,7 +16,7 @@ def least_biggest(nums):
     # Find the largest x so x numbers are >= x
     for idx in range(len(freq_list) - 1, -1, -1):
         if freq_list[idx] >= idx:
-            return idx
+            return nums[idx]
     return -1
 
-print(least_biggest([1, 2, 3, 3, 4]))  
+print(least_biggest([1, 2, 3, 5,5,5,5, 4]))  
