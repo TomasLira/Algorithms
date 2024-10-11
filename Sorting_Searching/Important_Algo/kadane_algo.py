@@ -22,3 +22,5 @@ def maxSubArray(nums: list[int]) -> int:
         maximum_sum = max(current_sum,maximum_sum)  
     return maximum_sum
         
+
+print(maximum_subarray([1,1,-5,6,7]))

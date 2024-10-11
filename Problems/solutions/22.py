@@ -1,28 +1,15 @@
-from typing import List
+from sys import maxsize
 
-def count_inversions(nums: List[int]):
-    if len(nums) <= 1:
-        return nums, 0
-    middle: int = len(nums) // 2
-    left, left_inversions = count_inversions(nums[:middle])
-    right, right_inversions = count_inversions(nums[middle:])
-    counter = left_inversions + right_inversions
-    
-    def merge(left: List[int], right: List[int]) -> List[int]:
-        nonlocal counter
-        sorted_list = []
-        i = j = 0
-        while i < len(left) and j < len(right):
-            if left[i] <= right[j]:
-                sorted_list.append(left[i])
-                i += 1
-            else:
-                sorted_list.append(right[j])
-                counter += 1
-                j += 1
-        sorted_list.extend(left[i:])
-        sorted_list.extend(right[j:])
-        return sorted_list
-
-    sorted_list = merge(left, right)
-    return sorted_list, counter
+def gas_station(gas,cost):
+        net_list = [i - j for i,j in zip(gas,cost)]
+        if sum(net_list) < 0:
+            return -1
+        max_counter = -maxsize
+        start_idx = -1
+        counter = 0
+        for idx,num in reversed(list(enumerate(net_list))):
+            counter  += num
+            if max_counter < counter:
+                start_idx = idx
+                max_counter = counter
+        return start_idx

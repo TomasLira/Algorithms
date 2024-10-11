@@ -1,23 +1,21 @@
-# Solution O(n^2) using dp
-import bisect
-def longest_sub(nums):
-    dp = [1] * len(nums)
-    max_length = 0
-    for end in range(len(nums)):
-        for start in range(end):
-            if nums[end] > nums[start]:
-                dp[end] = max(dp[end], dp[start] + 1)
-        max_length = max(max_length, dp[end])
-    return max_length
-
-# Solution O(nlog(n)
-def longest_sub(nums):
-    dp = []
-    for num in nums:
-        # Use bs to find correct sorted pos in dp list
-        pos = bisect.bisect_left(dp,num)
-        if pos == len(dp):
-            dp.append(num)
-        else:
-            dp[pos] = num
-    return len(dp)
+def three_sum(nums,target):
+    result = []
+    nums.sort()
+    for left in range(len(nums)):
+        # Filter duplicate elements
+        if left > 0 and nums[left] == nums[left-1]:
+            continue
+        start,end = left+1,len(nums)-1
+        while start < end:
+            total_sum = nums[left] + nums[start] + nums[end]
+            if  total_sum < target:
+                start +=1
+            elif  total_sum > target:
+                end -= 1
+            else:
+                result.append(nums[left],nums[start],nums[end])
+                left += 1
+                # Edge case when values are repeated
+                while nums[start] == nums[start-1] and start < end:
+                    start += 1
+    return result

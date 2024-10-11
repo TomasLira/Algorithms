@@ -1,12 +1,14 @@
-def no_adj_sum(nums):
-    if len(nums) == 0:
-        return 0
-    elif len(nums) == 1:
-        return nums[0]
-
-    dp = [0] * len(nums)
-    dp[0] = nums[0]
-    dp[1] = max(nums[0], nums[1])
-    for i in range(2, len(nums)):
-        dp[i] = max(nums[i] + dp[i-2], dp[i-1])
-    return dp[-1]
+# Solution 1 O(n) Time
+def closest_pair(l1, l2):
+    idx1, idx2 = 0, 0
+    min_diff = float('inf')
+    
+    while idx1 < len(l1) and idx2 < len(l2):
+        min_diff = min(abs(l1[idx1] - l2[idx2]), min_diff)        
+        if l1[idx1] < l2[idx2]:
+            idx1 += 1
+        elif l2[idx2] < l1[idx1]:
+            idx2 += 1
+        else: 
+            return 0
+    return min_diff    

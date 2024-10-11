@@ -30,8 +30,8 @@ def coinChange(coins: List[int], amount: int) -> int:
                 if num - coin >= 0:
                     # +1 for current coin, get dp of past vals and compares to prev vals of other coins
                     dp[num] = min(dp[num],dp[num-coin]+1)
+        print(dp)
         return dp[amount] if dp[amount] != float("inf") else -1
-
 print(coinChange([2,3,5],7))
             
             
