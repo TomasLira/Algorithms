@@ -92,7 +92,6 @@
    - **Description**: Given a list `A` of `n` integers, design an algorithm to find the maximum product of any three numbers. Use a greedy strategy to determine the highest combination, considering both positive and negative values.
    - **Time Complexity**: O(n log n)
 
-
 25. **Clone Graph**
    - **Description**: Given a reference of a node in a connected undirected graph, return a deep copy (clone) of the graph. Each node in the graph contains a value and a list of its neighbors.
    - **Time Complexity**: O(N + E), where N is the number of nodes and E is the number of edges.
@@ -140,5 +139,9 @@
 36. **All Paths from Source to Target**
    - **Description**: Given a directed acyclic graph, return all paths from the source node to the target node.
    - **Time Complexity**: O(2^N), where N is the number of nodes (in the worst case, you may need to explore every possible path).
+
+37. **chromatic number of graphs**
+   - **Description**: Give a linear algorithm to compute the chromatic number of graphs where each vertex has degree at most 2.
+   - **Time Complexity**: O(N + E), where N is the number of node and E the number os edges
 
 
