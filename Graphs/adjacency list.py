@@ -77,7 +77,6 @@ class Graph:
             v1 = v2  
         return True
     
-    
     def display(self):
         for vertex in self.adj_list:
             print(f"{vertex}: {self.adj_list[vertex]}")
