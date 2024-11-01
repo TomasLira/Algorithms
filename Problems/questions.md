@@ -144,4 +144,13 @@
    - **Description**: Give a linear algorithm to compute the chromatic number of graphs where each vertex has degree at most 2.
    - **Time Complexity**: O(N + E), where N is the number of node and E the number os edges
 
+38. **Construct BST**
+   - **Description**: Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.
+   - **Time Complexity**: O(N), where N is the number of node
+
+39. **Square of directed Graph**
+- **Description**: The square of a directed graph G = (V, E) is the graph G2 = (V, E2) such that (u,w) ∈ E2 iff there exists v ∈ V such that (u,v) ∈ E and (v,w) ∈ E; i.e., there is a path of exactly two edges from u to w.
+- **Time Complexity**: O(V*E), where V is the number of node and E the number of edges
+
+
 

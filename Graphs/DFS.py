@@ -7,9 +7,10 @@ def dfs(graph: List[List[int]]) -> None:
     parent: List[Optional[int]] = [None] * v_len
     discovery_time: List[int] = [-1] * v_len
     finish_time: List[int] = [-1] * v_len
-    time = [0] 
-    dfs_tree = {}
-
+    back_edges: List[tuple] = []  
+    time = [0]  
+    dfs_tree = {}  
+    
     def dfs_visit(start_v: int) -> None:
         colors[start_v] = 'G'
         time[0] += 1
@@ -17,17 +18,18 @@ def dfs(graph: List[List[int]]) -> None:
         dfs_tree[start_v] = []
         
         for adj_v in graph[start_v]:
-            if colors[adj_v] == 'W':  
+            if colors[adj_v] == 'W': 
                 parent[adj_v] = start_v
-                #print(f'Vertex visited: {adj_v}')
                 dfs_tree[start_v].append(adj_v)
                 dfs_visit(adj_v)
+            # is the second condition necessary?
+            elif colors[adj_v] == 'B' and parent[start_v] != adj_v: 
+                back_edges.append((start_v, adj_v))
         
         colors[start_v] = 'B'
         time[0] += 1
         finish_time[start_v] = time[0]
     
-    # handle disconnected graphs
     for vertex in range(v_len):
         if colors[vertex] == 'W':
             dfs_visit(vertex)
@@ -44,16 +46,20 @@ def dfs(graph: List[List[int]]) -> None:
 
     print("DFS Tree Visualization:")
     for vertex in range(v_len):
-        if parent[vertex] is None: 
+        if parent[vertex] is None:
             print_tree(vertex)
+    
+    return parent, back_edges, discovery_time, finish_time
 
+# Example graph (Adjacency List)
 graph = [
-    [1, 2],    # Vertex 0 is connected to 1 and 2
-    [0, 3,4],    # Vertex 1 is connected to 0, 3 and 4
-    [0, 3],    # Vertex 2 is connected to 0 and 3
-    [1, 2,4], # Vertex 3 is connected to 1, 2
-    [1,2,3] # Vertex 4 is connected to 1,2,3
+    [1, 4, 5],    # Vertex 0 is connected to vertices 1, 4, 5
+    [0, 2, 4],    # Vertex 1 is connected to vertices 0, 4, 2
+    [1, 3],       # Vertex 2 is connected to vertices 1, 3
+    [2, 4],       # Vertex 3 is connected to vertices 2, 4
+    [0, 1, 3],    # Vertex 4 is connected to vertices 0, 1, 3
+    [0]           # Vertex 5 is connected to vertex 0
 ]
-dfs(graph)
 
-
+parent, back_edges, discovery_time, finish_time = dfs(graph)
+print("\nBack Edges:", back_edges)
