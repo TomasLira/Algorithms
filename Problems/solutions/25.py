@@ -1,3 +1,6 @@
+from typing import Optional
+from collections import deque
+
 class Node:
     def __init__(self, val=0, neighbors=None):
         self.val = val
@@ -5,8 +8,6 @@ class Node:
 
 
 # Using DFS
-from typing import Optional
-from collections import deque
 class Solution:
     def clone_node(self, original_node: 'Node', visited_nodes: dict) -> 'Node':
         cloned_node = Node(original_node.val)
@@ -52,5 +53,3 @@ class Solution:
                 current_clone.neighbors.append(cloned_nodes[adj_node.val])
                 
         return cloned_nodes[node.val]
-    
-        

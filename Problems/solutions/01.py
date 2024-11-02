@@ -38,4 +38,3 @@ def top_k_frequent(nums,k):
         if len(min_heap) > k:
             heapq.heappop(min_heap)
     return [num for freq,num in min_heap] 
-

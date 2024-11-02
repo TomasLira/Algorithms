@@ -18,4 +18,3 @@ def pair_sum(nums,target):
             return [complement,num]
         # True is a dummy value
         hash_table[num] = True
-    
