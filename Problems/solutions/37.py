@@ -1,5 +1,5 @@
 #O(V+E) time O(V) space
-# Optimal if we are dealing with degree 2 vertices
+#Optimal if we are dealing with degree 2 vertices
 def greedy_coloring(graph):
     v_len = len(graph)
     colors = [-1]*v_len

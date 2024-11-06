@@ -149,8 +149,5 @@
    - **Time Complexity**: O(N), where N is the number of node
 
 39. **Square of directed Graph**
-- **Description**: The square of a directed graph G = (V, E) is the graph G2 = (V, E2) such that (u,w) ∈ E2 iff there exists v ∈ V such that (u,v) ∈ E and (v,w) ∈ E; i.e., there is a path of exactly two edges from u to w.
-- **Time Complexity**: O(V*E), where V is the number of node and E the number of edges
-
-
-
+   - **Description**: The square of a directed graph G = (V, E) is the graph G2 = (V, E2) such that (u,w) ∈ E2 iff there exists v ∈ V such that (u,v) ∈ E and (v,w) ∈ E; i.e., there is a path of exactly two edges from u to w.
+   - **Time Complexity**: O(V*E), where V is the number of node and E the number of edges
