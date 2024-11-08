@@ -151,3 +151,18 @@
 39. **Square of directed Graph**
    - **Description**: The square of a directed graph G = (V, E) is the graph G2 = (V, E2) such that (u,w) ∈ E2 iff there exists v ∈ V such that (u,v) ∈ E and (v,w) ∈ E; i.e., there is a path of exactly two edges from u to w.
    - **Time Complexity**: O(V*E), where V is the number of node and E the number of edges
+
+40. **Rotting Oranges**
+
+- **Description**: You are given an m x n grid where each cell can have one of three values:  
+  - `0` representing an empty cell,  
+  - `1` representing a fresh orange,  
+  - `2` representing a rotten orange.  
+  Every minute, any fresh orange that is 4-directionally adjacent (up, down, left, right) to a rotten orange becomes rotten.  
+  Return the minimum number of minutes that must elapse until no cell has a fresh orange. If it is impossible to rot all the fresh oranges, return `-1`.
+- **Time Complexity**: O(m * n), where m is the number of rows and n is the number of columns in the grid.
+
+
+41. **Hamiltonian Cycle in a Graph**
+- **Description**: A **Hamiltonian cycle** in a graph G = (V, E) is a cycle that visits each vertex exactly once and returns to the starting vertex. Given a directed graph G, determine whether there exists a Hamiltonian cycle in the graph. If such a cycle exists, return `True`; otherwise, return `False`.
+- **Time Complexity**: O(2^V * V^2), where V is the number of vertices in the graph, as this is the worst-case time complexity for solving the problem using dynamic programming or backtracking.

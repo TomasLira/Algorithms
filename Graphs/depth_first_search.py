@@ -9,7 +9,7 @@ def depth_first_search(n: int, edges: list[list[int]]):
     processed_edges = set() 
     
     def dfs_helper(vertex):
-        print(vertex,pre_order,post_order)
+        #print(vertex,pre_order,post_order)
         pre_order[vertex] = start_time[0]
         start_time[0] += 1 
 
