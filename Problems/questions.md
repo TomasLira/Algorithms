@@ -153,7 +153,6 @@
    - **Time Complexity**: O(V*E), where V is the number of node and E the number of edges
 
 40. **Rotting Oranges**
-
 - **Description**: You are given an m x n grid where each cell can have one of three values:  
   - `0` representing an empty cell,  
   - `1` representing a fresh orange,  
@@ -162,7 +161,14 @@
   Return the minimum number of minutes that must elapse until no cell has a fresh orange. If it is impossible to rot all the fresh oranges, return `-1`.
 - **Time Complexity**: O(m * n), where m is the number of rows and n is the number of columns in the grid.
 
+41. **Find the Ordering of Tasks from Given Dependencies (Course Schedule II)**
 
-41. **Hamiltonian Cycle in a Graph**
-- **Description**: A **Hamiltonian cycle** in a graph G = (V, E) is a cycle that visits each vertex exactly once and returns to the starting vertex. Given a directed graph G, determine whether there exists a Hamiltonian cycle in the graph. If such a cycle exists, return `True`; otherwise, return `False`.
-- **Time Complexity**: O(2^V * V^2), where V is the number of vertices in the graph, as this is the worst-case time complexity for solving the problem using dynamic programming or backtracking.
+- **Description**: You are given `N` tasks labeled from `0` to `N-1`, and a list of prerequisite pairs where each pair `[a, b]` indicates that task `a` depends on task `b` (i.e., you must finish task `b` before task `a`). Your goal is to determine a valid ordering of tasks such that all tasks can be completed, respecting their dependencies. If it is impossible to complete all tasks due to a cycle in the dependency graph, return an empty array. If there are multiple valid orderings, return any one of them.
+- **Time Complexity**: O(N + E), where `N` is the number of tasks and `E` is the number of prerequisite pairs (edges). This complexity comes from performing a topological sort of the dependency graph.
+
+
+42. **Check Whether a Given Graph is Bipartite or Not**
+- **Description**:  
+  Given an adjacency list representing an undirected graph with `V` vertices indexed from `0` to `V-1`, determine whether the graph is **bipartite** or not. A graph is considered bipartite if you can divide its set of vertices into two disjoint sets such that no two adjacent vertices share the same set. A graph is bipartite if and only if it is possible to color the graph using two colors in such a way that no two adjacent vertices have the same color.
+- **Time Complexity**:  
+  O(V + E), where `V` is the number of vertices and `E` is the number of edges in the graph. This is the time complexity for performing a BFS or DFS traversal to check for bipartiteness.

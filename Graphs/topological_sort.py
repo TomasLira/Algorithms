@@ -27,8 +27,8 @@ def topological_sort(n: int, edges: list[list[int]]):
 
 n = 6
 edges = [
-    [5,2],
     [2,3],
+    [5,2],
     [3,1],
     [4,1],
     [4,0],
