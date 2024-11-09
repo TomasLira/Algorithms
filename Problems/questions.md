@@ -153,22 +153,34 @@
    - **Time Complexity**: O(V*E), where V is the number of node and E the number of edges
 
 40. **Rotting Oranges**
-- **Description**: You are given an m x n grid where each cell can have one of three values:  
-  - `0` representing an empty cell,  
-  - `1` representing a fresh orange,  
-  - `2` representing a rotten orange.  
-  Every minute, any fresh orange that is 4-directionally adjacent (up, down, left, right) to a rotten orange becomes rotten.  
-  Return the minimum number of minutes that must elapse until no cell has a fresh orange. If it is impossible to rot all the fresh oranges, return `-1`.
-- **Time Complexity**: O(m * n), where m is the number of rows and n is the number of columns in the grid.
+   - **Description**: You are given an m x n grid where each cell can have one of three values:  
+   - `0` representing an empty cell,  
+   - `1` representing a fresh orange,  
+   - `2` representing a rotten orange.  
+   Every minute, any fresh orange that is 4-directionally adjacent (up, down, left, right) to a rotten orange becomes rotten.  
+   Return the minimum number of minutes that must elapse until no cell has a fresh orange. If it is impossible to rot all the fresh oranges, return `-1`.
+   - **Time Complexity**: O(m * n), where m is the number of rows and n is the number of columns in the grid.
 
 41. **Find the Ordering of Tasks from Given Dependencies (Course Schedule II)**
-
-- **Description**: You are given `N` tasks labeled from `0` to `N-1`, and a list of prerequisite pairs where each pair `[a, b]` indicates that task `a` depends on task `b` (i.e., you must finish task `b` before task `a`). Your goal is to determine a valid ordering of tasks such that all tasks can be completed, respecting their dependencies. If it is impossible to complete all tasks due to a cycle in the dependency graph, return an empty array. If there are multiple valid orderings, return any one of them.
-- **Time Complexity**: O(N + E), where `N` is the number of tasks and `E` is the number of prerequisite pairs (edges). This complexity comes from performing a topological sort of the dependency graph.
+   - **Description**: You are given `N` tasks labeled from `0` to `N-1`, and a list of prerequisite pairs where each pair `[a, b]` indicates that task `a` depends on task `b` (i.e., you must finish task `b` before task `a`). Your goal is to determine a valid ordering of tasks such that all tasks can be completed, respecting their dependencies. If it is impossible to complete all tasks due to a cycle in the dependency graph, return an empty array. If there are multiple valid orderings, return any one of them.
+   - **Time Complexity**: O(N + E), where `N` is the number of tasks and `E` is the number of prerequisite pairs (edges). This complexity comes from performing a topological sort of the dependency graph.
 
 
 42. **Check Whether a Given Graph is Bipartite or Not**
-- **Description**:  
-  Given an adjacency list representing an undirected graph with `V` vertices indexed from `0` to `V-1`, determine whether the graph is **bipartite** or not. A graph is considered bipartite if you can divide its set of vertices into two disjoint sets such that no two adjacent vertices share the same set. A graph is bipartite if and only if it is possible to color the graph using two colors in such a way that no two adjacent vertices have the same color.
-- **Time Complexity**:  
-  O(V + E), where `V` is the number of vertices and `E` is the number of edges in the graph. This is the time complexity for performing a BFS or DFS traversal to check for bipartiteness.
+   - **Description**:  
+   Given an adjacency list representing an undirected graph with `V` vertices indexed from `0` to `V-1`, determine whether the graph is **bipartite** or not. A graph is considered bipartite if you can divide its set of vertices into two disjoint sets such that no two adjacent vertices share the same set. A graph is bipartite if and only if it is possible to color the graph using two colors in such a way that no two adjacent vertices have the same color.
+   - **Time Complexity**:  
+   O(V + E), where `V` is the number of vertices and `E` is the number of edges in the graph. This is the time complexity for performing a BFS or DFS traversal to check for bipartiteness.
+
+43. **Path with Maximum Probability**
+   - **Description**:  
+   You are given an undirected weighted graph with `n` nodes (0-indexed), represented by an edge list where `edges[i] = [a, b]` is an undirected edge connecting the nodes `a` and `b` with a probability of success of traversing that edge `succProb[i]`. Given two nodes, `start` and `end`, find the path with the maximum probability of success to go from `start` to `end` and return its success probability.If there is no path from `start` to `end`, return `0`.
+   - **Time Complexity**:  
+  O(E log V), where `V` is the number of vertices and `E` is the number of edges in the graph.
+
+
+44. **Cheapest Flights Within K Stops**
+   - **Description**:  
+   There are `n` cities connected by some number of flights. You are given an array `flights` where `flights[i] = [from_i, to_i, price_i]` indicates that there is a flight from city `from_i` to city `to_i` with cost `price_i`. You are also given three integers: `src`, `dst`, and `k`. Your task is to return the cheapest price from city `src` to city `dst` with at most `k` stops. If there is no such route, return `-1`.
+   - **Time Complexity**:  
+  O(K * E), where `K` is the maximum number of stops and `E` is the number of edges in the flight list.
