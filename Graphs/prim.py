@@ -32,15 +32,33 @@ def prim(n: int, edges: list[tuple[int, int, int]]) -> tuple[int, list[tuple[int
     else:
         return float('inf'), []  
 
-n = 4
-edges = [
-    (0, 1, 10),
-    (0, 2, 6),
-    (0, 3, 5),
-    (1, 3, 15),
-    (2, 3, 4)
-]
+import networkx as nx
+import matplotlib.pyplot as plt
 
+def visualize_graph(n, edges):
+    G = nx.Graph()
+    G.add_nodes_from(range(n))    
+    for u, v, weight in edges:
+        G.add_edge(u, v, weight=weight)
+    pos = nx.spring_layout(G, seed=42) 
+    nx.draw_networkx_nodes(G, pos, node_size=500, node_color='lightblue')
+    nx.draw_networkx_edges(G, pos, width=1, edge_color='gray')
+    nx.draw_networkx_labels(G, pos, font_size=12, font_color='black')
+    edge_labels = {(u, v): f'{d["weight"]}' for u, v, d in G.edges(data=True)}
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10)
+    plt.title("Graph Visualization")
+    plt.show()
+
+n = 8
+edges = [
+    (0, 1, 10), (0, 2, 6), (0, 3, 5), (0, 4, 15),
+    (1, 3, 15), (1, 4, 12), (1, 5, 7), (2, 3, 4),
+    (2, 5, 9), (3, 4, 8), (3, 6, 11), (4, 6, 13),
+    (5, 6, 3), (5, 7, 14), (6, 7, 1)
+]
 mst_cost, mst_edges = prim(n, edges)
 print("Total cost of MST:", mst_cost)
 print("Edges in MST:", mst_edges)
+
+visualize_graph(n, edges)
+
