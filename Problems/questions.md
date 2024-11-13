@@ -184,3 +184,21 @@
    There are `n` cities connected by some number of flights. You are given an array `flights` where `flights[i] = [from_i, to_i, price_i]` indicates that there is a flight from city `from_i` to city `to_i` with cost `price_i`. You are also given three integers: `src`, `dst`, and `k`. Your task is to return the cheapest price from city `src` to city `dst` with at most `k` stops. If there is no such route, return `-1`.
    - **Time Complexity**:  
   O(K * E), where `K` is the maximum number of stops and `E` is the number of edges in the flight list.
+
+45. **Shortest Path Through Specified Vertices in Order**
+   - **Description**:  
+     Given a strongly connected directed graph without weights and a list `L` of vertices in the graph, return the shortest path that passes through all vertices in `L` in the specified order. The graph is represented as an adjacency list, and the list `L` contains vertices that must be visited in sequence.
+   - **Time Complexity**:  
+      O(len(L)(V + E)), where `V` is the number of vertices, `E` is the number of edges in the graph, and `len(L)` is the number of vertices in the list `L`.
+
+46. **Vertex with Minimum Maximum Distance**
+   - **Description**:  
+     Given a strongly connected directed graph with weights and a list `L` of vertices in the graph, return the vertex `V` such that the maximum distance from any vertex in `L` to `V` is minimized. In other words, find the vertex `V` that minimizes `max{d(L[0], V), d(L[1], V), ..., d(L[N-1], V)}`, where `d(u, v)` represents the shortest distance from `u` to `v`.
+   - **Time Complexity**:  
+   The time complexity is O(N (V log V + E)), where `N` is the number of vertices in `L`, `V` is the total number of vertices, and `E` is the number of edges in the graph.
+
+47. **Cheapest Path with Distance Constraint**
+   - **Description**:  
+     Given a directed graph with weighted edges, a path `C`, and a positive integer `X`, design an algorithm to find the cheapest path `C'` that starts and ends at the same vertices as `C`. The constraint is that the distance from any vertex in `C'` to its nearest vertex in `C` must not exceed `X`.
+   - **Time Complexity**:  
+    O(V log V + E), where `V` is the number of vertices and `E` is the number of edges
