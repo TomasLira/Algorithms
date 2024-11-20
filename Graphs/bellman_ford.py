@@ -5,12 +5,9 @@ def bellman_ford(n: int, edges: list[list[int]], src: int):
     dist[src] = 0
 
     for _ in range(n - 1):
-        op = False
         for u, v, weight in edges:
             if dist[u] != maxsize and dist[u] + weight < dist[v]:
                 dist[v] = dist[u] + weight
-                op = True
-        if not op: break
         
     for u, v, weight in edges:
         if dist[u] != maxsize and dist[u] + weight < dist[v]:

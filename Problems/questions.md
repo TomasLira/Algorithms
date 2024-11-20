@@ -178,7 +178,6 @@
    - **Time Complexity**:  
   O(E log V), where `V` is the number of vertices and `E` is the number of edges in the graph.
 
-
 44. **Cheapest Flights Within K Stops**
    - **Description**:  
    There are `n` cities connected by some number of flights. You are given an array `flights` where `flights[i] = [from_i, to_i, price_i]` indicates that there is a flight from city `from_i` to city `to_i` with cost `price_i`. You are also given three integers: `src`, `dst`, and `k`. Your task is to return the cheapest price from city `src` to city `dst` with at most `k` stops. If there is no such route, return `-1`.
@@ -202,3 +201,16 @@
      Given a directed graph with weighted edges, a path `C`, and a positive integer `X`, design an algorithm to find the cheapest path `C'` that starts and ends at the same vertices as `C`. The constraint is that the distance from any vertex in `C'` to its nearest vertex in `C` must not exceed `X`.
    - **Time Complexity**:  
     O(V log V + E), where `V` is the number of vertices and `E` is the number of edges
+
+48. **Minimum Cost to Connect All Points**  
+- **Description**:  
+  You are given an array `points` representing integer coordinates of some points on a 2D-plane, where `points[i] = [xi, yi]`. The cost of connecting two points `[xi, yi]` and `[xj, yj]` is the Manhattan distance between them: `|xi - xj| + |yi - yj|`, where `|val|` denotes the absolute value of `val`. Return the minimum cost to make all points connected. All points are connected if there is exactly one simple path between any two points.  
+- **Time Complexity**:  
+  Depends on the algorithm used (e.g., Kruskal's or Prim's algorithm).
+
+
+49. **Number of Provinces**  
+- **Description**:  
+  There are `n` cities. Some of them are connected, while some are not. If city `a` is connected directly with city `b`, and city `b` is connected directly with city `c`, then city `a` is connected indirectly with city `c`. A **province** is a group of directly or indirectly connected cities and no other cities outside of the group. You are given an `n x n` matrix `isConnected` where `isConnected[i][j] = 1` if the `i`th city and the `j`th city are directly connected, and `isConnected[i][j] = 0` otherwise. Return the total number of provinces.  
+- **Time Complexity**:  
+  O(n²) for a DFS or BFS approach.
