@@ -247,27 +247,3 @@
    Find the shortest cycle (or **girth**) in an undirected or directed graph. Use all-pairs shortest path algorithms (e.g., Floyd-Warshall) to compute cycles by identifying paths that return to the starting vertex.  
    - **Time Complexity**:  
    O(V³) using Floyd-Warshall or O(V * (V + E)) with BFS for each vertex in unweighted graphs.
-
-55. **Maximum Matching in a Bipartite Graph**
-   - **Description**:  
-   Given a bipartite graph, find the maximum matching—a set of edges such that no two edges share a vertex. This corresponds to assigning workers to tasks optimally, ensuring no worker or task is overloaded.  
-   - **Time Complexity**:  
-   O(V * E), using the Hopcroft-Karp algorithm.
-
-56. **Minimum Edge Cover**
-   - **Description**:  
-   Find the largest subset of edges such that every vertex in the graph is incident to at least one edge. This involves ensuring all tasks in an assignment problem are covered, even if it requires assigning multiple workers.  
-   - **Time Complexity**:  
-   O(V³) using maximum matching and transformations.
-
-57. **Chinese Postman Problem (Eulerian Circuit)**
-   - **Description**:  
-   Find the shortest tour in a graph that traverses every edge at least once. If the graph is Eulerian (i.e., all vertices have even degree), the problem is trivial. If not, pair up odd-degree vertices to create an Eulerian graph.  
-   - **Time Complexity**:  
-   O(V³), involving matching algorithms and shortest path calculations.
-
-58. **Graph Connectivity: Smallest Cut-Set**
-   - **Description**:  
-   Identify the smallest subset of vertices or edges whose removal disconnects the graph or separates two given vertices (`s` and `t`). Applications include network reliability and communication planning.  
-   - **Time Complexity**:  
-   O(V * E), leveraging max-flow min-cut theorem or DFS-based articulation point algorithms.

@@ -1,5 +1,4 @@
 def check_tree(n: int, edges: list[tuple[int, int]]):
-    
     graph = [[] for _ in range(n)]
     for u, v in edges:
         graph[u].append(v)

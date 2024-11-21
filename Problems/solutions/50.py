@@ -1,4 +1,3 @@
-#INCOMPLETE NEED TO IMPLEMENT SCC
 def connected_components(n:int, edges: list[tuple[int, int]]):        
     # Checks if graph is weakly connected.
     def check_weak(n, edges):
@@ -57,6 +56,10 @@ def connected_components(n:int, edges: list[tuple[int, int]]):
 
     print("Is graph weakly connected:", is_weak)
     print("Bridges in the graph:", find_weak_bridges(n, edges))
+    
+    
+    def find_scc(n, edges):
+        ...
 
 
 n1 = 3
