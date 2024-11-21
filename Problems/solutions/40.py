@@ -1,5 +1,4 @@
 from collections import deque
-
 def orangesRotting(grid: list[list[int]]) -> int:
     rows, cols = len(grid), len(grid[0])
     queue = deque()
