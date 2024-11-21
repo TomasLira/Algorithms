@@ -208,9 +208,66 @@
 - **Time Complexity**:  
   Depends on the algorithm used (e.g., Kruskal's or Prim's algorithm).
 
-
 49. **Number of Provinces**  
 - **Description**:  
   There are `n` cities. Some of them are connected, while some are not. If city `a` is connected directly with city `b`, and city `b` is connected directly with city `c`, then city `a` is connected indirectly with city `c`. A **province** is a group of directly or indirectly connected cities and no other cities outside of the group. You are given an `n x n` matrix `isConnected` where `isConnected[i][j] = 1` if the `i`th city and the `j`th city are directly connected, and `isConnected[i][j] = 0` otherwise. Return the total number of provinces.  
 - **Time Complexity**:  
   O(n²) for a DFS or BFS approach.
+
+50. **Connected Components: Weakly or Strongly Connected?**
+   - **Description**:  
+   Given a directed graph with `V` vertices and `E` edges, determine whether the graph is weakly or strongly connected. A graph is **strongly connected** if every vertex is reachable from every other vertex via directed paths. It is **weakly connected** if replacing all directed edges with undirected ones results in a connected graph.  
+   - **Time Complexity**:  
+   O(V + E), using Kosaraju's or Tarjan's algorithm to identify strongly connected components.
+
+51. **Find the Weakest Point in the Graph**
+   - **Description**:  
+   Identify the smallest subset of vertices or edges in a graph whose removal will disconnect the graph. For vertex connectivity, find the minimum number of vertices whose removal separates the graph. For edge connectivity, find the minimum number of edges to achieve the same.  
+   - **Time Complexity**:  
+   O(V * E), leveraging flow-based algorithms like Edmonds-Karp for edge connectivity or DFS-based methods for articulation points.
+
+52. **Tree Identification**
+   - **Description**:  
+   Given an undirected graph, determine whether it is a tree. A graph is a tree if it is connected and contains no cycles.  
+   - **Time Complexity**:  
+   O(V + E), by performing a DFS or BFS to check for cycles and connectivity.
+
+53. **Is Your Graph a Directed Acyclic Graph (DAG)?**
+   - **Description**:  
+   Determine whether a directed graph is acyclic. If the graph is a DAG, compute the shortest path from a given source `s` to all vertices using a topological sort. Shortest path is calculated as:  
+   $$
+   d(s, j) = \min_{(i, j) \in E} \{ d(s, i) + w(i, j) \}
+   $$
+   Use the same approach (replacing `min` with `max`) to find the longest path in a DAG.  
+   - **Time Complexity**:  
+   O(V + E) for topological sorting and path calculation.
+
+54. **Shortest Cycle in a Graph**
+   - **Description**:  
+   Find the shortest cycle (or **girth**) in an undirected or directed graph. Use all-pairs shortest path algorithms (e.g., Floyd-Warshall) to compute cycles by identifying paths that return to the starting vertex.  
+   - **Time Complexity**:  
+   O(V³) using Floyd-Warshall or O(V * (V + E)) with BFS for each vertex in unweighted graphs.
+
+55. **Maximum Matching in a Bipartite Graph**
+   - **Description**:  
+   Given a bipartite graph, find the maximum matching—a set of edges such that no two edges share a vertex. This corresponds to assigning workers to tasks optimally, ensuring no worker or task is overloaded.  
+   - **Time Complexity**:  
+   O(V * E), using the Hopcroft-Karp algorithm.
+
+56. **Minimum Edge Cover**
+   - **Description**:  
+   Find the largest subset of edges such that every vertex in the graph is incident to at least one edge. This involves ensuring all tasks in an assignment problem are covered, even if it requires assigning multiple workers.  
+   - **Time Complexity**:  
+   O(V³) using maximum matching and transformations.
+
+57. **Chinese Postman Problem (Eulerian Circuit)**
+   - **Description**:  
+   Find the shortest tour in a graph that traverses every edge at least once. If the graph is Eulerian (i.e., all vertices have even degree), the problem is trivial. If not, pair up odd-degree vertices to create an Eulerian graph.  
+   - **Time Complexity**:  
+   O(V³), involving matching algorithms and shortest path calculations.
+
+58. **Graph Connectivity: Smallest Cut-Set**
+   - **Description**:  
+   Identify the smallest subset of vertices or edges whose removal disconnects the graph or separates two given vertices (`s` and `t`). Applications include network reliability and communication planning.  
+   - **Time Complexity**:  
+   O(V * E), leveraging max-flow min-cut theorem or DFS-based articulation point algorithms.
