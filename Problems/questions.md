@@ -220,19 +220,13 @@
    - **Time Complexity**:  
    O(V + E), using Kosaraju's or Tarjan's algorithm to identify strongly connected components.
 
-51. **Find the Weakest Point in the Graph**
-   - **Description**:  
-   Identify the smallest subset of vertices or edges in a graph whose removal will disconnect the graph. For vertex connectivity, find the minimum number of vertices whose removal separates the graph. For edge connectivity, find the minimum number of edges to achieve the same.  
-   - **Time Complexity**:  
-   O(V * E), leveraging flow-based algorithms like Edmonds-Karp for edge connectivity or DFS-based methods for articulation points.
-
-52. **Tree Identification**
+51. **Tree Identification**
    - **Description**:  
    Given an undirected graph, determine whether it is a tree. A graph is a tree if it is connected and contains no cycles.  
    - **Time Complexity**:  
    O(V + E), by performing a DFS or BFS to check for cycles and connectivity.
 
-53. **Is Your Graph a Directed Acyclic Graph (DAG)?**
+52. **Is Your Graph a Directed Acyclic Graph (DAG)?**
    - **Description**:  
    Determine whether a directed graph is acyclic. If the graph is a DAG, compute the shortest path from a given source `s` to all vertices using a topological sort. Shortest path is calculated as:  
    $$
@@ -242,7 +236,7 @@
    - **Time Complexity**:  
    O(V + E) for topological sorting and path calculation.
 
-54. **Shortest Cycle in a Graph**
+53. **Shortest Cycle in a Graph**
    - **Description**:  
    Find the shortest cycle (or **girth**) in an undirected or directed graph. Use all-pairs shortest path algorithms (e.g., Floyd-Warshall) to compute cycles by identifying paths that return to the starting vertex.  
    - **Time Complexity**:  

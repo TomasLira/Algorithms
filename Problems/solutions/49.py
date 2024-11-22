@@ -9,8 +9,8 @@ def findCircleNum(isConnected: list[list[int]]) -> int:
             for adj_v in range(n):
                 if isConnected[vertex][adj_v] == 1 and not visited[adj_v]:
                     dfs(adj_v)
-        provinces = 0        
         
+        provinces = 0        
         for vertex in range(n):
             if not visited[vertex]:
                 provinces += 1
