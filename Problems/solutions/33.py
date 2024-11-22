@@ -1,41 +1,33 @@
-def criticalConnections(n:int, connections:list[list[int]]):
-        graph = [[] for _ in  range(n)]
-        #discovery
-        disc = [-1]*n
-        #depth
-        low = [-1]*n
-        result = []
-        time = 0
-        
-        for u,v in connections:
+class Solution:
+    def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
+        graph = [[] for _ in range(n)]
+        for u, v in connections:
             graph[u].append(v)
             graph[v].append(u)
+            
+        discovery = [-1]*n
+        low = [-1]*n
+        parents = [-1]*n
+        bridges = []
+        time = [0]
         
-        def dfs(vertex, parent,time):
-            disc[vertex] = time
-            low[vertex] = time
-            time += 1
-            
+        def dfs(vertex):
+            discovery[vertex] = low[vertex] = time[0]
+            time[0] += 1
             for adj_v in graph[vertex]:
-                if adj_v == parent:
-                    continue
-                if disc[adj_v] == -1:
-                    dfs(adj_v,vertex,time)
-                    # updates value of low[vertex]
-                    # If no back edges, then low[vertex] > low[adj_v]
-                    low[vertex] = min(low[vertex],low[adj_v])
+                if discovery[adj_v] == -1:
+                    parents[adj_v] = vertex
+                    dfs(adj_v)
+                    low[vertex] = min(low[adj_v],low[vertex])
                     
-                    if low[adj_v] > disc[vertex]:
-                        result.append([adj_v,vertex])
-                else:
-                    # adj_v is known, checks if they have backedges an change vertex's value
-                    low[vertex] = min(low[vertex],low[adj_v])
+                    # used to find articulation vertex so < instead of > 
+                    if discovery[vertex] < low[adj_v]:
+                        bridges.append((vertex,adj_v))
+                
+                elif parents[vertex] != adj_v:
+                    # think as if the same vertex could have multiple back edges
+                    low[vertex] = min(low[vertex], discovery[adj_v])
         for i in range(n):
-            if disc[i] == -1:
-                dfs(i, -1,time)
-        return result
-                
-
-                
-            
-            
+            if discovery[i] == -1:
+                dfs(i)
+        return bridges
