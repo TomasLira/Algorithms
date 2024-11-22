@@ -1,20 +1,29 @@
-#O(V+E) time O(V) space
-#Optimal if we are dealing with degree 2 vertices
-def greedy_coloring(graph):
-    v_len = len(graph)
-    colors = [-1]*v_len
+from collections import deque
+def check_coloring(n: int, edges: list[list[int]]):
+    graph = [[] for _ in range(n)]
+    for u, v in edges:
+        graph[u].append(v)
+        graph[v].append(u)    
     
-    for v in range(v_len):
-        used_colors = set()
-        for adj_v in graph[v]:
-            if colors[adj_v] != -1:
-                used_colors.add(colors[adj_v])
-        color = 1
-        while color in used_colors:
-            color += 1
-        colors[v] = color
+    colors = [-1] * n
     
-    return max(colors)  
+    def bfs(vertex):
+        queue = deque([vertex])
+        colors[vertex] = 0
+        
+        while queue:
+            current = queue.popleft()
+            current_color = colors[current]
+            for adj_v in graph[current]:
+                if colors[adj_v] == -1:
+                    colors[adj_v] = 1 - current_color
+                    queue.append(adj_v)
+                elif colors[adj_v] == current_color:
+                    return False
+        return True    
 
-graph = [[1,2],[0,2],[0,1]]
-print(greedy_coloring(graph)) 
+    for i in range(n):
+        if colors[i] == -1:
+            if not bfs(i):
+                return False
+    return True
