@@ -1,5 +1,5 @@
 class Solution:
-    def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
+    def criticalConnections(self, n: int, connections: list[list[int]]) -> list[list[int]]:
         graph = [[] for _ in range(n)]
         for u, v in connections:
             graph[u].append(v)
