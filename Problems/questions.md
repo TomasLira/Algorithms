@@ -241,3 +241,26 @@
    Find the shortest cycle (or **girth**) in an undirected or directed graph. Use all-pairs shortest path algorithms (e.g., Floyd-Warshall) to compute cycles by identifying paths that return to the starting vertex.  
    - **Time Complexity**:  
    O(V³) using Floyd-Warshall or O(V * (V + E)) with BFS for each vertex in unweighted graphs.
+
+
+54. Maximum Increase in Minimum Spanning Tree Cost
+- **Description**:  
+  Given a connected, undirected graph with weighted edges, identify the edge whose removal would cause the largest increase in the cost of the minimum spanning tree (MST).
+
+- **Time Complexity**:  
+  Depends on the approach:  
+  - **O(E log V)** for constructing the MST (e.g., using Kruskal's or Prim's algorithm).  
+  - Additional complexity to evaluate the impact of edge removal.
+
+55. Algorithms to Filter Vertices Based on Tree Properties
+
+- **Description**:  
+  Given a graph G = (V, E), a rooted tree  T derived from G, and a list  L_1 containing vertices of the tree:  
+  Write three algorithms that return a list L_2, containing vertices such that a vertex is in  L_2 if and only if it is in L_1 or:  
+  - (a) Has an odd number of descendants in L_2.  
+  - (b) Has an odd number of ancestors in L_2 .  
+  - (c) Has an odd number of older siblings in  L_2.  
+
+- **Time Complexity**:  
+  Dependent on the tree traversal and list update methods. For efficient solutions:  
+  - **O(V + E)** with a single DFS for computing descendants, ancestors, or siblings.
