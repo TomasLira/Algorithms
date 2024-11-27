@@ -41,6 +41,8 @@ def shortest_path_through_vertices(n: int, edges: list[list[int]], L: list[int])
 
     for i in range(1, len(L)):
         src, dst = L[i - 1], L[i]
+        #print(src,dst)
+        visited_L[dst] = False 
         visited = visited_L.copy()
         parents = bfs(src, dst, visited)
         path = reconstruct_path(parents, src, dst)
@@ -49,6 +51,12 @@ def shortest_path_through_vertices(n: int, edges: list[list[int]], L: list[int])
         if full_path and full_path[-1] == src:
             path = path[1:] 
         full_path.extend(path)
-        visited_L[dst] = False 
     
     return full_path
+
+
+edges = [[0, 1], [1, 2], [0, 3], [3, 4], [4, 2], [2, 5],[2,1],[1,0]]
+n = 6 
+L= [0,2,4]
+
+print(shortest_path_through_vertices(n,edges,L))
