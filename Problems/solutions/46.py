@@ -1,6 +1,7 @@
 import heapq
 from sys import maxsize
 
+# Alter to V^2
 def find_min_max_distance(n: int, edges: list[tuple[int, int, int]], L: list[int]) -> int:
     adjacency_list = [[] for _ in range(n)]
     for src, dest, weight in edges:

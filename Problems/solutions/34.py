@@ -37,5 +37,4 @@ def longest_path(n, edges):
             # base case happens at first iteration!
             # top down 
             distances[v] = max(distances[v], distances[u] + 1)
-    
     return max(distances)

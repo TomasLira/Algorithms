@@ -1,71 +1,54 @@
 from collections import deque
 
-def specified_path(n: int, edges: list[list[int]], L: list[int]):
+def shortest_path_through_vertices(n: int, edges: list[list[int]], L: list[int]):
     graph = [[] for _ in range(n)]
     for u, v in edges:
         graph[u].append(v)
     
-    parents = [-1] * n  
-    visited = [False] * n
+    visited_L = [False] * n
+    full_path = []
     
-    for vertex in L:
-        visited[vertex] = True
+    for l_vertex in L:
+        visited_L[l_vertex] = True
+    visited_L[L[0]] = False 
     
-    def bfs(src: int, target: int, visited_local: list[bool]):
+    def bfs(src: int, dst: int, visited_local: list[bool]) -> list[int]:
         queue = deque([src])
+        parents = [-1] * n  
+        visited_local[src] = True
         
         while queue:
-            v = queue.popleft()
-            for adj in graph[v]:
-                if not visited_local[adj]:
-                    queue.append(adj)
-                    visited_local[adj] = True
-                    parents[adj] = v
-                    if adj == target:
-                        return 
+            vertex = queue.popleft()
+            if vertex == dst:
+                break
+            for adj_v in graph[vertex]:
+                if not visited_local[adj_v]:
+                    queue.append(adj_v)
+                    visited_local[adj_v] = True
+                    parents[adj_v] = vertex
+        return parents
 
-    for i in range(len(L) - 1):
-        src, target = L[i], L[i + 1]
-        
-        visited[target] = False
-        visited_copy = visited.copy()
-        
-        bfs(src, target, visited_copy)        
-        visited[target] = True
+    def reconstruct_path(parents: list[int], src: int, dst: int) -> list[int]:
+        path = []
+        current = dst
+        while current != -1:
+            path.append(current)
+            current = parents[current]
+        if path[-1] != src:
+            return []  
+        path.reverse()
+        return path
 
-    return parents
-
-
-
-n = 5
-edges = [
-    [0, 1],
-    [1, 2],
-    [2, 0],  
-    [1, 3],
-    [3, 4],
-    [4, 1]  
-]
-
-L = [0, 3, 4]
-
-parents = specified_path(n, edges, L)
-print("Parent Array:", parents)
-
-def reconstruct_path(L, parents):
-    path = []
+    for i in range(1, len(L)):
+        src, dst = L[i - 1], L[i]
+        visited = visited_L.copy()
+        parents = bfs(src, dst, visited)
+        path = reconstruct_path(parents, src, dst)
+        if not path:
+            return []  
+        if full_path and full_path[-1] == src:
+            path = path[1:] 
+        full_path.extend(path)
+        visited_L[dst] = False 
     
-    for i in range(len(L) - 1):
-        src, target = L[i], L[i + 1]
-        segment = []
-        current = target
-        
-        while current != -1 and current != src:
-            segment.append(current)
-            current = parents[current]        
-        segment.append(src)
-        path.extend(reversed(segment) if not path else reversed(segment[:-1]))
-    
-    return path
-
-print("Specified Path of L:", reconstruct_path(L, parents))
+    return full_path
