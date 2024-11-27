@@ -122,7 +122,7 @@
 
 32. **Redundant Connection**
    - **Description**: In a graph of `n` nodes, add one extra edge to ensure it remains a tree. Return the edge that can be removed while maintaining the tree structure.
-   - **Time Complexity**: O(N), where N is the number of nodes.
+   - **Time Complexity**: O(Nlog(N)), where N is the number of nodes.
 
 33. **Critical Connections in a Network**
    - **Description**: Given a network of nodes and connections, find all the critical connections that, if removed, will cause the network to become disconnected.

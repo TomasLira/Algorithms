@@ -49,12 +49,13 @@ def visualize_graph(n, edges):
     plt.title("Graph Visualization")
     plt.show()
 
-n = 8
+n = 4
 edges = [
-    (0, 1, 10), (0, 2, 6), (0, 3, 5), (0, 4, 15),
-    (1, 3, 15), (1, 4, 12), (1, 5, 7), (2, 3, 4),
-    (2, 5, 9), (3, 4, 8), (3, 6, 11), (4, 6, 13),
-    (5, 6, 3), (5, 7, 14), (6, 7, 1)
+    (0, 1, 1),
+    (1, 2, 2),
+    (0, 2, 2),
+    (2, 3, 1),
+    (1, 3, 3)
 ]
 mst_cost, mst_edges = prim(n, edges)
 print("Total cost of MST:", mst_cost)
