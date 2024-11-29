@@ -1,53 +1,53 @@
-import heapq
 from sys import maxsize
+import heapq
 
-# Alter to V^2
 def find_min_max_distance(n: int, edges: list[tuple[int, int, int]], L: list[int]) -> int:
-    adjacency_list = [[] for _ in range(n)]
-    for src, dest, weight in edges:
-        adjacency_list[src].append((dest, weight))
+    graph = [[] for _ in range(n)]
+    for u, v, w in edges:
+        graph[u].append((v, w))
     
-    def dijkstra(source: int):
+    max_distances_L = [-maxsize] * n
+    L_set = set(L)
+
+    def dijkstra(src: int):
         distances = [maxsize] * n
-        distances[source] = 0
-        
-        min_heap = [(0, source)] 
-        
+        distances[src] = 0
+        min_heap = [(0, src)] 
+
         while min_heap:
-            current_distance, current_vertex = heapq.heappop(min_heap)
-            
-            if current_distance > distances[current_vertex]:
+            current_distance, vertex = heapq.heappop(min_heap)
+
+            if current_distance > distances[vertex]:
                 continue
-            
-            for neighbor, weight in adjacency_list[current_vertex]:
-                distance_to_neighbor = current_distance + weight
-                if distance_to_neighbor < distances[neighbor]:
-                    distances[neighbor] = distance_to_neighbor
-                    heapq.heappush(min_heap, (distance_to_neighbor, neighbor))
-        
-        max_distance = max(distances)
-        max_distance_vertex = distances.index(max_distance)
-        return max_distance, max_distance_vertex
-    
-    min_of_max_distances = maxsize
-    best_vertex = -1
-    
-    for start_vertex in L:
-        max_distance, farthest_vertex = dijkstra(start_vertex)
-        if max_distance < min_of_max_distances:
-            min_of_max_distances = max_distance
-            best_vertex = farthest_vertex
-    
-    return best_vertex
 
-num_vertices = 5
+            max_distances_L[vertex] = max(max_distances_L[vertex], current_distance)
+
+            for adj_v, adj_weight in graph[vertex]:
+                new_distance = current_distance + adj_weight
+                if new_distance < distances[adj_v]:
+                    distances[adj_v] = new_distance
+                    heapq.heappush(min_heap, (new_distance, adj_v))
+    
+    for vertex_l in L:
+        dijkstra(vertex_l)
+    
+    min_dist_v = -1
+    min_dist = maxsize
+    for vertex, distance in enumerate(max_distances_L):
+        if vertex not in L_set and distance < min_dist:
+            min_dist = distance
+            min_dist_v = vertex
+    return min_dist_v
+
+
+n = 6
 edges = [
-    (0, 1, 10),
-    (1, 2, 20),
-    (2, 3, 5),
-    (3, 4, 15)
+    (0, 1, 2), (1, 2, 3), (2, 3, 4),
+    (3, 4, 5), (4, 5, 6), (5, 0, 1),
+    (2, 0, 3), (3, 1, 2), (4, 2, 1)
 ]
-start_vertices = [0, 2, 4]
+L = [0, 2]
 
-result = find_min_max_distance(num_vertices, edges, start_vertices)
-print("Best vertex with minimum max distance:", result)
+
+resultado = find_min_max_distance(n, edges, L)
+print(f"O vértice com a menor maior distância dos vértices em L é: {resultado}")

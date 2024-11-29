@@ -251,3 +251,12 @@
   Depends on the approach:  
   - **O(E log V)** for constructing the MST (e.g., using Kruskal's or Prim's algorithm).  
   - Additional complexity to evaluate the impact of edge removal.
+
+
+55. Tree descendants
+- **Description**:  
+Given a graph G = (V, E) and a rooted tree T of G produced by a traversal, along with a list L1 containing the vertices of this tree, write 3 algorithms that return a list L2. A vertex is included in L2 if and only if it is in L1 or:
+
+(a) it has an odd number of descendants in L2.
+(b) it has an odd number of ancestors in L2.
+(c) it has an odd number of older siblings in L2.

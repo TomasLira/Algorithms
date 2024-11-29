@@ -19,7 +19,6 @@ def numIslands(grid: list[list[str]]) -> int:
                 island_num += 1 
     return island_num
 
-
 class UF:
     def __init__(self, n):
         # Each node is its own parent at initialization
