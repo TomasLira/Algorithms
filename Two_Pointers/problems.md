@@ -9,7 +9,7 @@ Given an array of integers sorted in ascending order and a target value, return 
 
 ---
 
-## Example 1
+### Example 1
 
 **Input:**  
 nums = [-5, -2, 3, 4, 6], target = 7  
@@ -22,7 +22,7 @@ nums[2] + nums[3] = 3 + 4 = 7
 
 ---
 
-## Example 2
+### Example 2
 
 **Input:**  
 nums = [1, 1, 1], target = 2  
@@ -48,7 +48,7 @@ $a + b + c = 0$.
 
 ---
 
-## Example
+### Example
 
 **Input:**  
 nums = [0, -1, 2, -3, 1]
